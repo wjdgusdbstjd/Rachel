@@ -815,7 +815,7 @@ header.active .line-1 {
         flex-flow: column;
         justify-content: center;
         align-items: center;
-        border: 1px solid red;
+        /* border: 1px solid red; */
         /* padding-top: 35vw; */
         margin-top: 30vw;
     }
