@@ -171,12 +171,12 @@
         gsap.from(
             ".main .tag-1, .tag-2, .tag-3",
             {
-                y: "10vw",
+                y: "4vw",
                 opacity: 0, //투명인 상태에서 시작
-                duration: 1, //얼마동안 이 모션을 진행할건지 - 숫자가 커질수록 느려짐
+                duration: 0.5, //얼마동안 이 모션을 진행할건지 - 숫자가 커질수록 느려짐
                 delay: 0.1,
                 ease: "power1.out",
-                stagger: 0.35, //각 애미메이션 사이에 0.15초의 지연을 둠
+                stagger: 0.2, //각 애미메이션 사이에 0.15초의 지연을 둠
                 scrollTrigger: {
                     trigger: ".tag-1",   // → trigger 를 h2 로
                     start: "top bottom",                // h2 의 top 이 뷰포트 bottom 에 닿을 때
@@ -224,23 +224,23 @@
             }
         );
 
-        gsap.from(
-            ".section-1 img:nth-child(4)",
-            {
-                y: "20vw",
-                opacity: 0, //투명인 상태에서 시작
-                duration: 1, //얼마동안 이 모션을 진행할건지 - 숫자가 커질수록 느려짐
-                delay: 0.1,
-                ease: "power1.out",
-                stagger: 0.5, //각 애미메이션 사이에 0.15초의 지연을 둠
-                scrollTrigger: {
-                    trigger: ".section-1 img:nth-child(4)",   // → trigger 를 h2 로
-                    start: "top bottom",                // h2 의 top 이 뷰포트 bottom 에 닿을 때
-                    toggleActions: "play reverse play reverse", // 나타날때마다 모션 진행
-                    markers: false //페이지에 스크롤 위치 마커
-                }
-            }
-        );
+        // gsap.from(
+        //     ".section-1 img:nth-child(4)",
+        //     {
+        //         y: "20vw",
+        //         opacity: 0, //투명인 상태에서 시작
+        //         duration: 1, //얼마동안 이 모션을 진행할건지 - 숫자가 커질수록 느려짐
+        //         delay: 0.1,
+        //         ease: "power1.out",
+        //         stagger: 0.5, //각 애미메이션 사이에 0.15초의 지연을 둠
+        //         scrollTrigger: {
+        //             trigger: ".section-1 img:nth-child(4)",   // → trigger 를 h2 로
+        //             start: "top bottom",                // h2 의 top 이 뷰포트 bottom 에 닿을 때
+        //             toggleActions: "play reverse play reverse", // 나타날때마다 모션 진행
+        //             markers: false //페이지에 스크롤 위치 마커
+        //         }
+        //     }
+        // );
 
 
         gsap.from(
@@ -262,8 +262,19 @@
         );
 
 
+        // 1. 레이첼 이미지와 텍스트(h4) 찾아오기
+// img 태그 중에 src가 'img/rachel-2.png'인 녀석만 딱 골라옴!
+const rachelImg = document.querySelector(".section-1 img[src='img/rachel-2.png']");
+const rachelText = document.querySelector(".section-1 h4");
+
+// 2. 클릭 이벤트 달기
+rachelImg.addEventListener("click", function() {
+    rachelText.classList.toggle("active");
+});
+
+
         gsap.from(
-            ".section-2 img:nth-child(1)",
+            ".section-2 .section-2-img img:nth-child(1)",
             {
                 y: "-30vw",
                 opacity: 0, //투명인 상태에서 시작
@@ -272,7 +283,7 @@
                 ease: "power1.out",
                 stagger: 0.35, //각 애미메이션 사이에 0.15초의 지연을 둠
                 scrollTrigger: {
-                    trigger: ".section-2 img:nth-child(1)",   // → trigger 를 h2 로
+                    trigger: ".section-2 .section-2-img img:nth-child(1)",   // → trigger 를 h2 로
                     start: "top bottom",                // h2 의 top 이 뷰포트 bottom 에 닿을 때
                     toggleActions: "play reverse play reverse", // 나타날때마다 모션 진행
                     markers: false //페이지에 스크롤 위치 마커
@@ -283,7 +294,7 @@
 
 
         gsap.from(
-            ".section-2 img:nth-child(3)",
+            ".section-2 .section-2-img img:nth-child(2)",
             {
                 x: "30vw",
                 opacity: 0, //투명인 상태에서 시작
@@ -292,7 +303,7 @@
                 ease: "power1.out",
                 stagger: 0.35, //각 애미메이션 사이에 0.15초의 지연을 둠
                 scrollTrigger: {
-                    trigger: ".section-2 img:nth-child(3)",   // → trigger 를 h2 로
+                    trigger: ".section-2 .section-2-img img:nth-child(2)",   // → trigger 를 h2 로
                     start: "top bottom",                // h2 의 top 이 뷰포트 bottom 에 닿을 때
                     toggleActions: "play reverse play reverse", // 나타날때마다 모션 진행
                     markers: false //페이지에 스크롤 위치 마커
@@ -301,7 +312,7 @@
         );
 
         gsap.from(
-            ".section-2 img:nth-child(4)",
+            ".section-2 .rachel-name-2",
             {
                 y: "20vw",
                 opacity: 0, //투명인 상태에서 시작
@@ -310,7 +321,7 @@
                 ease: "power1.out",
                 stagger: 0.35, //각 애미메이션 사이에 0.15초의 지연을 둠
                 scrollTrigger: {
-                    trigger: ".section-2 img:nth-child(4)",   // → trigger 를 h2 로
+                    trigger: ".section-2 .rachel-name-2",   // → trigger 를 h2 로
                     start: "top bottom",                // h2 의 top 이 뷰포트 bottom 에 닿을 때
                     toggleActions: "play reverse play reverse", // 나타날때마다 모션 진행
                     markers: false //페이지에 스크롤 위치 마커
@@ -325,6 +336,25 @@
                 opacity: 0, //투명인 상태에서 시작
                 duration: 1, //얼마동안 이 모션을 진행할건지 - 숫자가 커질수록 느려짐
                 delay: 0.2,
+                ease: "power1.out",
+                stagger: 0.35, //각 애미메이션 사이에 0.15초의 지연을 둠
+                scrollTrigger: {
+                    trigger: ".section-2 p",   // → trigger 를 h2 로
+                    start: "top bottom",                // h2 의 top 이 뷰포트 bottom 에 닿을 때
+                    toggleActions: "play reverse play reverse", // 나타날때마다 모션 진행
+                    markers: false //페이지에 스크롤 위치 마커
+                }
+            }
+        );
+
+
+        gsap.from(
+            ".section-2 .hide",
+            {
+                x: "-20vw",
+                opacity: 0, //투명인 상태에서 시작
+                duration: 1, //얼마동안 이 모션을 진행할건지 - 숫자가 커질수록 느려짐
+                delay: 1,
                 ease: "power1.out",
                 stagger: 0.35, //각 애미메이션 사이에 0.15초의 지연을 둠
                 scrollTrigger: {
@@ -435,11 +465,11 @@
                 // x: "-30vw",
                 opacity: 0, //투명인 상태에서 시작
                 duration: 1, //얼마동안 이 모션을 진행할건지 - 숫자가 커질수록 느려짐
-                delay: 0.4,
+                delay: 0.3,
                 ease: "power1.out",
                 stagger: 0.35, //각 애미메이션 사이에 0.15초의 지연을 둠
                 scrollTrigger: {
-                    trigger: ".section-5-1",   // → trigger 를 h2 로
+                    trigger: ".section-5-1 .rossand",   // → trigger 를 h2 로
                     start: "top bottom",                // h2 의 top 이 뷰포트 bottom 에 닿을 때
                     toggleActions: "play reverse play reverse", // 나타날때마다 모션 진행
                     markers: false //페이지에 스크롤 위치 마커
@@ -454,7 +484,7 @@
                 y: "14vw",
                 opacity: 0, //투명인 상태에서 시작
                 duration: 1, //얼마동안 이 모션을 진행할건지 - 숫자가 커질수록 느려짐
-                delay: 0.4,
+                delay: 0.3,
                 ease: "power1.out",
                 stagger: 0.35, //각 애미메이션 사이에 0.15초의 지연을 둠
                 scrollTrigger: {
@@ -473,7 +503,7 @@
                 y: "14vw",
                 opacity: 0, //투명인 상태에서 시작
                 duration: 1, //얼마동안 이 모션을 진행할건지 - 숫자가 커질수록 느려짐
-                delay: 0.7,
+                delay: 0.5,
                 ease: "power1.out",
                 stagger: 0.35, //각 애미메이션 사이에 0.15초의 지연을 둠
                 scrollTrigger: {
@@ -492,7 +522,7 @@
                 y: "14vw",
                 opacity: 0, //투명인 상태에서 시작
                 duration: 1, //얼마동안 이 모션을 진행할건지 - 숫자가 커질수록 느려짐
-                delay: 1,
+                delay: 0.6,
                 ease: "power1.out",
                 stagger: 0.35, //각 애미메이션 사이에 0.15초의 지연을 둠
                 scrollTrigger: {
@@ -531,7 +561,7 @@
                 y: "-23vw",
                 opacity: 0, //투명인 상태에서 시작
                 duration: 1, //얼마동안 이 모션을 진행할건지 - 숫자가 커질수록 느려짐
-                delay: 0.8,
+                delay: 0.5,
                 ease: "power1.out",
                 stagger: 0.35, //각 애미메이션 사이에 0.15초의 지연을 둠
                 scrollTrigger: {
@@ -550,7 +580,7 @@
                 y: "23vw",
                 opacity: 0, //투명인 상태에서 시작
                 duration: 1, //얼마동안 이 모션을 진행할건지 - 숫자가 커질수록 느려짐
-                delay: 0.8,
+                delay: 0.5,
                 ease: "power1.out",
                 stagger: 0.35, //각 애미메이션 사이에 0.15초의 지연을 둠
                 scrollTrigger: {
